@@ -121,7 +121,7 @@ const BooksPage = () => {
                 }}
                 direction="row" 
                 spacing={2}
-                px={5}>
+                px={2}>
                 
                   {
                     chapters.map(
@@ -173,7 +173,7 @@ const BooksPage = () => {
                                                   }}
                                                   direction="row" 
                                                   spacing={2}
-                                                  px={5}>
+                                                  px={2}>
                                                     
                                                     {
                                                       verses.map(
@@ -219,7 +219,7 @@ const BooksPage = () => {
               >
                 <CircularProgress sx={{ my:1, color:'#84A9BC'}} />
               </Box>
-            : isSuccessVerse && <Card sx={{ minWidth: 175, mx:1, my:4 }}>
+            : isSuccessVerse && <Card sx={{ minWidth: 175, mx:1, my:3 }}>
                                   <CardContent>
                                     { verse.study && <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 15 }}>Estudio: {verse.study}</Typography>}
                                     <Typography variant="h5" component="div">
