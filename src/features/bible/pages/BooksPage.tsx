@@ -29,7 +29,7 @@ const BooksPage = () => {
   return isErrorBooks
   ?  <Typography variant="overline" sx={{ mt:2 }} >No se pudo conectarse al servidor (revise su conexión a internet)</Typography>
   :  <Container maxWidth='md'>
-        <Typography variant="h4" component='h1' gutterBottom sx={{ display: 'block', textAlign:'center', mt:2 }}>
+        <Typography variant="overline" component='h1' gutterBottom sx={{ display: 'block', textAlign:'center', mt:1 }}>
           Biblia Reina Valera 1960
         </Typography>
         {
@@ -57,8 +57,8 @@ const BooksPage = () => {
                                                       <Box
                                                         key={book.abrev}
                                                         sx={{
-                                                          width: 200,
-                                                          height: 120,
+                                                          width: 150,
+                                                          height: 110,
                                                           bgcolor: "#2F3E46",
                                                           color: "#fff",
                                                           display: "flex",
@@ -72,13 +72,13 @@ const BooksPage = () => {
                                                         }}
                                                       >
                                                         {/* Nombre del libro */}
-                                                        <Typography variant="h6" textAlign="center">
+                                                        <Typography variant="overline" textAlign="center">
                                                           {book.name}
                                                         </Typography>
                                           
                                                         {/* Descripción */}
                                                         <Typography
-                                                          variant="body2"
+                                                          variant="caption"
                                                           textAlign="center"
                                                           sx={{ fontSize: "0.8rem", color: "text.secondary" }}
                                                         >
@@ -88,8 +88,10 @@ const BooksPage = () => {
                                                         {/* Radio Button */}
                                                             <Radio
                                                               sx={{
+                                                                p:0.5,
+                                                                bgcolor:'#20212B',
                                                                 '& .MuiSvgIcon-root': {
-                                                                  fontSize: 30,
+                                                                  fontSize: 28,
                                                                   color:'#84A98C'
                                                                 },
                                                               }}
@@ -102,7 +104,6 @@ const BooksPage = () => {
                                                                 setselectedVerseNumber(1);
                                                               }}
                                                               value={book.abrev}
-                                                              color="primary"
                                                             />
                                                       </Box>
                                           ))
@@ -117,26 +118,23 @@ const BooksPage = () => {
                 sx={{
                   paddingTop:2,
                   paddingBottom:2,
-                  
                 }}
                 direction="row" 
                 spacing={2}
-                px={2}>
+                px={5}>
                 
                   {
                     chapters.map(
                       (num) =>  <FormControlLabel
-                                  sx={{
-                                    p:1,
-                                  }}
                                   key={num}
                                   value={num}
                                   control={<Radio
                                             sx={{
-                                              bgcolor:'#2F3E46',
+                                              mt:1,
+                                              bgcolor:'#20212B',
                                               p:1.5,
                                               '& .MuiSvgIcon-root': {
-                                                fontSize: 25,
+                                                fontSize: 20,
                                                 color:'#CAD2C5',
                                               },
                                             }}
@@ -147,7 +145,7 @@ const BooksPage = () => {
                                             }}
                                             value={num}
                                           />}
-                                  label={'capítulo '+num}
+                                  label={'c. '+num}
                                   labelPlacement="top"
                                 />
                     )
@@ -172,26 +170,23 @@ const BooksPage = () => {
                                                   sx={{
                                                     paddingTop:2,
                                                     paddingBottom:2,
-                                                    
                                                   }}
                                                   direction="row" 
                                                   spacing={2}
-                                                  px={2}>
+                                                  px={5}>
                                                     
                                                     {
                                                       verses.map(
                                                         (verse) =>  <FormControlLabel
-                                                                    sx={{
-                                                                      p:1,
-                                                                    }}
                                                                     key={verse.id}
                                                                     value={verse.number}
                                                                     control={<Radio
                                                                               sx={{
-                                                                                bgcolor:'#2F3E46',
+                                                                                mt:1,
+                                                                                bgcolor:'#20212B',
                                                                                 p:1.5,
                                                                                 '& .MuiSvgIcon-root': {
-                                                                                  fontSize: 25,
+                                                                                  fontSize: 20,
                                                                                   color:'#CAD2C5',
                                                                                 },
                                                                               }}
@@ -202,7 +197,7 @@ const BooksPage = () => {
                                                                               }}
                                                                               value={verse.number}
                                                                             />}
-                                                                    label={'versículo '+verse.number}
+                                                                    label={'v. '+verse.number}
                                                                     labelPlacement="top"
                                                                   />
                                                       )
@@ -224,7 +219,7 @@ const BooksPage = () => {
               >
                 <CircularProgress sx={{ my:1, color:'#84A9BC'}} />
               </Box>
-            : isSuccessVerse && <Card sx={{ minWidth: 175, m:1 }}>
+            : isSuccessVerse && <Card sx={{ minWidth: 175, mx:1, my:4 }}>
                                   <CardContent>
                                     { verse.study && <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 15 }}>Estudio: {verse.study}</Typography>}
                                     <Typography variant="h5" component="div">

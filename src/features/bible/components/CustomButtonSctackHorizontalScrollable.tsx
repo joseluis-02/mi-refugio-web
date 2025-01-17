@@ -18,7 +18,7 @@ export const CustomButtonSctackHorizontalScrollable = ({ onScroll, direction, ic
           position: "absolute",
           left: direction === 'l' ? 0 : null,
           right: direction === 'r' ? 0 : null,
-          top: "50%",
+          top: '25%',
           transform: "translateY(-50%)",
           zIndex: 1,
           bgcolor: "rgba(0, 0, 0, 0.5)",
