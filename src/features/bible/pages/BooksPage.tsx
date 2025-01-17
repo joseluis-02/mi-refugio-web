@@ -51,7 +51,7 @@ const BooksPage = () => {
                                         }}
                                         direction="row" 
                                         spacing={2}
-                                        px={2}>
+                                        px={1}>
                                         {
                                           books.map((book) => (
                                                       <Box
@@ -121,7 +121,7 @@ const BooksPage = () => {
                 }}
                 direction="row" 
                 spacing={2}
-                px={2}>
+                px={1}>
                 
                   {
                     chapters.map(
@@ -173,7 +173,7 @@ const BooksPage = () => {
                                                   }}
                                                   direction="row" 
                                                   spacing={2}
-                                                  px={2}>
+                                                  px={1}>
                                                     
                                                     {
                                                       verses.map(
