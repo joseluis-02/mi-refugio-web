@@ -1,6 +1,9 @@
 
+
 export const SearchPage = () => {
   return (
-    <div>SearchPage</div>
+    <>
+      <p>Hola mundo</p>
+    </>
   )
 }

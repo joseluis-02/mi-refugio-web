@@ -28,7 +28,7 @@ export const AppRoutes = () => {
         <Route path="/bible/*" element={ <BibleRoutes /> } />
         
         {/*Cualquier otro ruta sera direccionado a Login */}
-        <Route path="/*" element={ <Navigate to='/auth/login'/> } />
+        <Route path="/*" element={ <Navigate to='/bible/books'/> } />
       
       </Routes>
   )
